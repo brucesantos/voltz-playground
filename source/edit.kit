@@ -1,0 +1,149 @@
+<!-- @import "head" -->
+
+<!-- @import "header" -->
+
+<section class="chat">
+    <div class="entry-group init robot">
+        <div class="entry">
+            <p class="bubble">
+                Olá! 😊
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Eu sou a Voltz, assistente virtual da sua conta digital. Estou aqui para ajudar com o seu cadastro.
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Tenha em mãos o seu RG ou CNH, você vai precisar tirar uma foto do documento para finalizar o cadastro
+            </p>
+        </div>
+        <div class="entry suggestions">
+            <p class="suggestion primary">
+                Vamos lá
+            </p>
+            <div class="anime-space">
+            </div>
+        </div>
+    </div>
+    <div class="entry-group robot">
+        <div class="entry">
+            <p class="bubble">
+                Fico feliz que você está aqui para abrir uma conta digital com a gente! 😊
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Antes, é importante que vc conheça nossos <strong>Termos e condições</strong>
+            </p>
+        </div>
+        <div class="entry suggestions">
+            <p class="suggestion primary">
+                Ler os termos
+            </p>
+            <div class="anime-space">
+            </div>
+        </div>
+    </div>
+    <div class="entry-group robot">
+        <div class="entry">
+            <p class="bubble">
+                Legal! 😊
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Agora, uma última coisa, precisamos que você também leia e aceite nossa <strong>Política de Privacidade</strong>
+            </p>
+        </div>
+        <div class="entry suggestions">
+            <p class="suggestion primary">
+                Ler a política
+            </p>
+            <div class="anime-space">
+            </div>
+        </div>
+    </div>
+    <div class="entry-group robot">
+        <div class="entry">
+            <p class="bubble">
+                Muito bem
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Agora vou precisar de alguns dados seus. Mas primeiro, <strong>como você gostaria que eu te chamasse?</strong>
+            </p>
+        </div>
+    </div>
+    <div class="entry-group user apelido">
+        <div class="entry">
+            <div class="action">
+                <i class="far fa-pencil start"></i>
+                <i class="far fa-times cancel"></i>
+            </div>
+            <div class="anime-space">
+            </div>
+            <p class="bubble">
+                Lindo
+            </p>
+        </div>
+    </div>
+    <div class="entry-group robot">
+        <div class="entry">
+            <p class="bubble">
+                Prazer, Lindo! 👋
+            </p>
+        </div>
+        <div class="entry">
+            <p class="bubble">
+                Preciso que me informe o <strong>número do seu CPF</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="fakey" id="apelido">
+    <div class="text-caput">
+        <div class="char-box">
+            Placeholder
+        </div>
+        <div class="send-btn">
+            <i class="fas fa-paper-plane"></i>
+        </div>
+    </div>
+    <img src="img/fakeyboard.png" alt="tecladinho feiqui">
+</div>
+
+<script>
+    $('.entry-group').hide();
+    $(document).ready(function() {
+        $('.init').show();
+        $('.action').click(function(){
+            $(this).toggleClass('editing');
+            $(this).siblings('.anime-space').toggleClass('editing');
+            $(this).siblings('.bubble').toggleClass('editing');
+            $('html, body').animate({
+                scrollTop: $(this).offset().top -300
+            }, 500);
+        });
+        $('.suggestion').click(function(){
+            $(this).addClass('active');
+            $(this).siblings('.anime-space').addClass('active');
+            $(this).parent().parent().next('.entry-group').fadeIn();
+            $('html, body').animate({
+                scrollTop: $(this).parent().parent().next('.entry-group').offset().top
+            }, 500);
+        });
+        $('#apelido').click(function(){
+            $('.apelido').fadeIn();
+            $('.apelido').next('.entry-group').fadeIn();
+            $('html, body').animate({
+                scrollTop: $('.apelido').offset().top
+            }, 500);
+        });
+    });
+</script>
+
+<!-- @import "foot" -->

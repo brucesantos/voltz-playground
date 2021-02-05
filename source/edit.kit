@@ -107,7 +107,7 @@
 <div class="fakey" id="apelido">
     <div class="text-caput">
         <div class="char-box">
-            Placeholder
+            |
         </div>
         <div class="send-btn">
             <i class="fas fa-paper-plane"></i>
@@ -116,8 +116,21 @@
     <img src="img/fakeyboard.png" alt="tecladinho feiqui">
 </div>
 
+<div class="fakey" id="apelido-edit">
+    <div class="text-caput">
+        <div class="char-box">
+            <span>Lindo</span>|
+        </div>
+        <div class="send-btn">
+            <i class="fas fa-check"></i>
+        </div>
+    </div>
+    <img src="img/fakeyboard.png" alt="tecladinho feiqui">
+</div>
+
 <script>
     $('.entry-group').hide();
+    $('#apelido-edit').hide();
     $(document).ready(function() {
         $('.init').show();
         $('.action').click(function(){
@@ -127,6 +140,8 @@
             $('html, body').animate({
                 scrollTop: $(this).offset().top -300
             }, 500);
+            $('#apelido').hide();
+            $('#apelido-edit').show();
         });
         $('.suggestion').click(function(){
             $(this).addClass('active');
@@ -142,6 +157,12 @@
             $('html, body').animate({
                 scrollTop: $('.apelido').offset().top
             }, 500);
+        });
+        $('.fa-check').click(function(){
+            $('#apelido').show();
+            $('#apelido-edit').hide();
+            $('.editing').addClass('edited');
+            $('.editing').toggleClass('editing');
         });
     });
 </script>

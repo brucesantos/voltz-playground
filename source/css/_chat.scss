@@ -32,6 +32,16 @@ $bbrad: 20px;
                     &.editing {
                         background-color: $accent-main;
                     }
+                    &.edited {
+                        display: flex;
+                        flex-direction: column;
+                        transition: $edit-transition;
+                        &::before {
+                            content: 'edited';
+                            font-size: 10px;
+                            opacity: .6;
+                        }
+                    }
                     transition: $edit-transition;
                 }
                 &:first-of-type {
@@ -137,6 +147,9 @@ $bbrad: 20px;
             flex-grow: 1;
             padding: 8px 0;
             color: $tertiary-main;
+            span {
+                color: white;
+            }
         }
         .send-btn {
             height: 40px;

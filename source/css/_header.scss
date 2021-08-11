@@ -10,13 +10,13 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background-color: lighten($primary-dark, 5);
-    color: lighten($tertiary-main, 12);
+    background-color: white;
+    color: $accent-main;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    box-shadow: 0 20px 40px 40px transparentize(darken($primary-dark,10), .9);
+    box-shadow: 0 2px 0 rgba(0,0,0,.06);
     .acoes {
         .btn {
             display: flex;
@@ -26,12 +26,13 @@ header {
             height: 40px;
             i {
                 font-size: 20px;
-                line-height: 1;
             }
         }
     }
     .titulo {
-        color: lighten($primary-dark, 40);
+        color: #2D3748;
+        font-size: 18px;
+        font-weight: bold;
     }
     // border-bottom: 2px solid lighten($primary-dark, 10);
 }
